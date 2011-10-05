@@ -1,0 +1,14 @@
+<{if $contact_message_title}>
+	<h1><{$contact_message_title}></h1>
+<{/if}>
+<{if $contact_message_info}>
+	<p><{$contact_message_info}></p>
+<{/if}>
+
+<{if $contact_message_table}>
+	<{$contact_message_table}>
+<{/if}>
+
+<{if $addmessage}>
+	<{includeq file='db:system_common_form.html' form=$addmessage}>
+<{/if}>

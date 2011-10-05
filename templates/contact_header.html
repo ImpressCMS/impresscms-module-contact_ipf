@@ -1,0 +1,16 @@
+<{if $contact_show_breadcrumb}>
+	<div class="contact_headertable">
+		<{if $contact_module_home}>
+			<span class="contact_modulename"><{$contact_module_home}></span>
+		<{/if}>
+		<{if $contact_category_path}>
+			<span class="contact_breadcrumb">
+			<{if $contact_module_home}>
+				&gt;
+			<{/if}>
+			<{$contact_category_path}></span>
+		<{/if}>
+	</div>
+<{else}>
+	<div class="contact_spacer"></div>
+<{/if}>

@@ -1,0 +1,7 @@
+Version 1.01
+===========
+
+- Standardise order of admin menu items
+- Fix op whitelisting error
+- Add module prefix to function names (avoid namespace clash)
+- Fix version number
