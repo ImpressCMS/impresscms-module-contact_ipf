@@ -20,8 +20,8 @@ $adminmenu[] = array(
 	
 	$headermenu[] = array(
 		"title" => _CO_ICMS_GOTOMODULE,
-		"link" => ICMS_URL . "/modules/contact/");
-
+		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname"));
+		
 	$headermenu[] = array(
 		"title" => _PREFERENCES,
 		"link" => "../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod="
@@ -34,7 +34,7 @@ $adminmenu[] = array(
 	
 	$headermenu[] = array(
 		"title" => _CO_ICMS_UPDATE_MODULE,
-		"link" => ICMS_URL . "/modules/system/admin.php?fct=modulesadmin&op=update&module="
+		"link" => ICMS_URL . "/modules/system/admin.php?fct=modulesadmin&op=update&amp;module="
 		. $module->getVar("dirname"));
 
 	$headermenu[] = array(

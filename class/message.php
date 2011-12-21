@@ -46,6 +46,8 @@ class ContactMessage extends icms_ipf_seo_Object {
 		
 		// make date read only, it's for internal use
 		$this->doHideFieldFromForm('date');
+		
+		$this->IcmsPersistableSeoObject();
 	}
 
 	/**

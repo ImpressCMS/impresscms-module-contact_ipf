@@ -34,20 +34,16 @@ function contact_is_valid_email_address($email)
  * @todo to be move in icms core
  */
 function contact_getModuleName($withLink = true, $forBreadCrumb = false, $moduleName = false) {
-	if (!$moduleName) {
-		global $icmsModule;
-		$moduleName = $icmsModule->getVar('dirname');
-	}
-	$icmsModule = icms_getModuleInfo($moduleName);
-	$icmsModuleConfig = icms_getModuleConfig($moduleName);
-	if (!isset ($icmsModule)) {
+		
+	$contactModule = icms_getModuleInfo(basename(dirname(dirname(__FILE__))));
+	if (!isset ($contactModule)) {
 		return '';
 	}
 
 	if (!$withLink) {
-		return $icmsModule->getVar('name');
+		return $contactModule->getVar('name');
 	} else {
-		$ret = ICMS_URL . '/modules/' . $moduleName . '/';
+		$ret = ICMS_URL . '/modules/' . $contactModule->getVar('name') . '/';
 		return '<a href="' . $ret . '">' . $icmsModule->getVar('name') . '</a>';
 	}
 }

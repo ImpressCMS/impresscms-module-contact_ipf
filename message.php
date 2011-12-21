@@ -16,8 +16,7 @@
  * @param int $message_id Messageid to be edited
 */
 function editmessage($clean_message_id = 0) {
-	global $icmsConfig, $icmsConfigCaptcha, $xoopsUser, $contact_message_handler, $icmsModule,
-		$icmsTpl;
+	global $icmsConfig, $icmsConfigCaptcha, $contact_message_handler, $icmsModule, $icmsTpl;
 	
 	$module = icms::handler("icms_module")->getByDirname(basename(dirname(__FILE__)), TRUE);
 
@@ -40,8 +39,6 @@ include_once 'header.php';
 $xoopsOption['template_main'] = 'contact_message.html';
 
 include_once ICMS_ROOT_PATH . '/header.php';
-
-global $xoopsUser;
 
 $module = icms::handler("icms_module")->getByDirname(basename(dirname(__FILE__)), TRUE);
 
