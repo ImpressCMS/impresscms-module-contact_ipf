@@ -15,7 +15,7 @@ if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 
 include_once(ICMS_ROOT_PATH . '/modules/contact/include/functions.php');
 
-class ContactMessage extends icms_ipf_seo_Object {
+class ContactMessage extends icms_ipf_Object {
 
 	/**
 	 * Constructor
@@ -46,8 +46,6 @@ class ContactMessage extends icms_ipf_seo_Object {
 		
 		// make date read only, it's for internal use
 		$this->doHideFieldFromForm('date');
-		
-		$this->IcmsPersistableSeoObject();
 	}
 
 	/**

@@ -44,6 +44,6 @@ function contact_getModuleName($withLink = true, $forBreadCrumb = false, $module
 		return $contactModule->getVar('name');
 	} else {
 		$ret = ICMS_URL . '/modules/' . $contactModule->getVar('name') . '/';
-		return '<a href="' . $ret . '">' . $icmsModule->getVar('name') . '</a>';
+		return '<a href="' . $ret . '">' . $contactModule->getVar('name') . '</a>';
 	}
 }
