@@ -39,8 +39,8 @@ $adminmenu[] = array(
 
 	$headermenu[] = array(
 		"title" => _MODABOUT_ABOUT,
-		"link" => ICMS_URL . "/modules/contact/admin/about.php");
+		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/admin/about.php");
 	
 	$headermenu[] = array(
 		"title" => _MI_CONTACT_MANUAL,
-		"link" => ICMS_URL . "/modules/contact/manual/contact_manual.pdf");
+		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/manual/contact_manual.pdf");

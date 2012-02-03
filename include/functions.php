@@ -12,7 +12,7 @@
 
 if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 
-// returns true if the email address is valid, otherwise false
+// returns TRUE if the email address is valid, otherwise false
 function contact_is_valid_email_address($email)
 {
 	$qtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';
@@ -33,7 +33,7 @@ function contact_is_valid_email_address($email)
 /**
  * @todo to be move in icms core
  */
-function contact_getModuleName($withLink = true, $forBreadCrumb = false, $moduleName = false) {
+function contact_getModuleName($withLink = TRUE, $forBreadCrumb = false, $moduleName = false) {
 		
 	$contactModule = icms_getModuleInfo(basename(dirname(dirname(__FILE__))));
 	if (!isset ($contactModule)) {

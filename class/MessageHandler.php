@@ -29,7 +29,7 @@ class ContactMessageHandler extends icms_ipf_Handler {
 		
 		// validate email address
 		if (contact_is_valid_email_address($obj->getVar('creator', 'e'))) {
-			return true;
+			return TRUE;
 		} else {
 			$obj->setErrors("Your email address is not valid, please try again.");
 			return false;

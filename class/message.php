@@ -27,11 +27,11 @@ class ContactMessage extends icms_ipf_Object {
 
 		icms_ipf_object::__construct($handler);
 
-		$this->quickInitVar('message_id', XOBJ_DTYPE_INT, true);
-		$this->quickInitVar('creator', XOBJ_DTYPE_TXTBOX, true); // email address
-		$this->quickInitVar('title', XOBJ_DTYPE_TXTBOX, true); // email subject
-		$this->quickInitVar('description', XOBJ_DTYPE_TXTAREA, true); // email body
-		$this->quickInitVar('date', XOBJ_DTYPE_INT, true, false, false, // timestamp
+		$this->quickInitVar('message_id', XOBJ_DTYPE_INT, TRUE);
+		$this->quickInitVar('creator', XOBJ_DTYPE_TXTBOX, TRUE); // email address
+		$this->quickInitVar('title', XOBJ_DTYPE_TXTBOX, TRUE); // email subject
+		$this->quickInitVar('description', XOBJ_DTYPE_TXTAREA, TRUE); // email body
+		$this->quickInitVar('date', XOBJ_DTYPE_INT, TRUE, false, false, // timestamp
 			$this->handler->setDate());
 		
 		// only allow simple text messages with line breaks - if you want to receive html email

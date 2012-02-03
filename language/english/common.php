@@ -12,7 +12,8 @@
 
 if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 
-// message
+// Message
+define("_CO_CONTACT_MODULE_NAME", "Contact");
 define("_CO_CONTACT_MESSAGE_CREATE", "Contact us");
 define("_CO_CONTACT_MESSAGE_CREATE_DSC", "Please submit this form to email your message to the site administrators.");
 define("_CO_CONTACT_MESSAGE_CREATOR", "Your email");

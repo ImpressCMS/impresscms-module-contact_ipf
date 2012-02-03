@@ -16,7 +16,7 @@
  * @param int $message_id Messageid to be edited
 */
 function editmessage($clean_message_id = 0) {
-	global $icmsConfig, $icmsConfigCaptcha, $contact_message_handler, $icmsModule, $icmsTpl;
+	global $contact_message_handler, $icmsTpl;
 	
 	$module = icms::handler("icms_module")->getByDirname(basename(dirname(__FILE__)), TRUE);
 
@@ -24,8 +24,9 @@ function editmessage($clean_message_id = 0) {
 
 	if ($messageObj->isNew()) {
 		$sform = $messageObj->getSecureForm(_CO_CONTACT_MESSAGE_CREATE, 'addmessage');
+		
 		// add captcha, if required
-		if ($module->config['use_captcha'] == true) {
+		if ($module->config['use_captcha'] == TRUE) {
 			$sform->addElement(new icms_form_elements_Captcha(_SECURITYIMAGE_GETCODE, 'scode'));
 		}
 		$sform->assign($icmsTpl, 'contact_messageform');
@@ -52,7 +53,7 @@ if (isset($_GET['op'])) $dirty_op = trim($_GET['op']);
 if (isset($_POST['op'])) $dirty_op = trim($_POST['op']);
 
 // proceed only if the option is valid (whitelisted)
-if (in_array($dirty_op, $valid_op, true)){
+if (in_array($dirty_op, $valid_op, TRUE)){
 	$clean_op = $dirty_op;
 	
   switch ($clean_op) {
@@ -70,9 +71,9 @@ if (in_array($dirty_op, $valid_op, true)){
 		///////////////////////////////////////////////////////////////////////////////////////
 		///// Verify captcha code, based on McDonald's implementation in Impression 1.0.2 /////
 		///////////////////////////////////////////////////////////////////////////////////////
-		if ($module->config['use_captcha'] == true) {
+		if ($module->config['use_captcha'] == TRUE) {
 			$icmsCaptcha = icms_form_elements_captcha_Object::instance(); 
-			if (!$icmsCaptcha->verify()) {
+			if (!$icmsCaptcha->verify(FALSE)) {
 				redirect_header('message.php?op=mod', 2, $icmsCaptcha->getMessage());
 				exit;
 			}
@@ -106,7 +107,7 @@ if (in_array($dirty_op, $valid_op, true)){
 		mail($mailaddress, $mailsubject, $mailbody, $headers);
 		
 		// display confirmation message
-		$icmsTpl->assign('contact_messagesent', true);
+		$icmsTpl->assign('contact_messagesent', TRUE);
 		break;
 		
 	default: // show an empty message form
@@ -116,12 +117,14 @@ if (in_array($dirty_op, $valid_op, true)){
 }
 
 // check if the module's breadcrumb should be displayed
-if ($module->config['show_breadcrumb'] == true) {
+if ($module->config['show_breadcrumb'] == TRUE) {
 	$icmsTpl->assign('contact_show_breadcrumb', $module->config['show_breadcrumb']);
 } else {
-	$icmsTpl->assign('contact_show_breadcrumb', false);
+	$icmsTpl->assign('contact_show_breadcrumb', FALSE);
+	$icmsTpl->assign('contact_page_title', _CO_CONTACT_MODULE_NAME);
 }
 
-$icmsTpl->assign('contact_module_home', contact_getModuleName(true, true));
+$icmsTpl->assign("contact_module_home", '<a href="' . ICMS_URL . "/modules/" 
+		. icms::$module->getVar("dirname") . '/">' . icms::$module->getVar("name") . "</a>");
 
 include_once 'footer.php';

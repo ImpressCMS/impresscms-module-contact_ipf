@@ -37,10 +37,10 @@ function icms_module_update_contact($module) {
 	 */
 	$icmsDatabaseUpdater = XoopsDatabaseFactory::getDatabaseUpdater();
 	$icmsDatabaseUpdater->moduleUpgrade($module);
-    return true;
+    return TRUE;
 }
 
 function icms_module_install_contact($module) {
 
-	return true;
+	return TRUE;
 }

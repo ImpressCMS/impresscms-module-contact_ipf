@@ -53,13 +53,13 @@ if (isset($_POST['op'])) $clean_op = htmlentities($_POST['op']);
 
 $clean_message_id = isset($_GET['message_id']) ? (int) $_GET['message_id'] : 0 ;
 
-if (in_array($clean_op,$valid_op,true)) {
+if (in_array($clean_op,$valid_op,TRUE)) {
   switch ($clean_op) {
   	case "mod":
   	case "changedField":
   		icms_cp_header();
-
   		editmessage($clean_message_id);
+		
   		break;
 	
   	case "addmessage":
