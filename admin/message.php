@@ -81,7 +81,7 @@ if (in_array($clean_op,$valid_op,TRUE)) {
 
   		$icmsModule->displayAdminMenu(0, _AM_CONTACT_MESSAGES);
 		
-		// if no op is set, but there is a (valid) message_id, display a single object
+		// If no op is set, but there is a (valid) message_id, display a single object
 		if ($clean_message_id) {
 			$messageObj = $contact_message_handler->get($clean_message_id);
 			if ($messageObj->id()) {

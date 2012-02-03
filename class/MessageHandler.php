@@ -27,11 +27,11 @@ class ContactMessageHandler extends icms_ipf_Handler {
 	
 	protected function beforeInsert(& $obj) {
 		
-		// validate email address
+		// Validate email address
 		if (contact_is_valid_email_address($obj->getVar('creator', 'e'))) {
 			return TRUE;
 		} else {
-			$obj->setErrors("Your email address is not valid, please try again.");
+			$obj->setErrors(_CO_CONTACT_INVALID_EMAIL);
 			return false;
 		}
 	}

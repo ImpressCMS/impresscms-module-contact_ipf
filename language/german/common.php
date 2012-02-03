@@ -12,7 +12,7 @@
 
 if (!defined("ICMS_ROOT_PATH")) die("ImpressCMS Basispfad ist nicht definiert");
 
-// message
+// Message
 define("_CO_CONTACT_MESSAGE_CREATE", "Kontakt aufnehmen");
 define("_CO_CONTACT_MESSAGE_CREATE_DSC", "Bitte senden Sie in diesem Formular eine Nachricht an den Inhaber dieser Webseite.");
 define("_CO_CONTACT_MESSAGE_CREATOR", "Ihre E-mail Adresse");

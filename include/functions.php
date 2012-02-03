@@ -12,7 +12,7 @@
 
 if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 
-// returns TRUE if the email address is valid, otherwise false
+//Returns TRUE if the email address is valid, otherwise false
 function contact_is_valid_email_address($email)
 {
 	$qtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';

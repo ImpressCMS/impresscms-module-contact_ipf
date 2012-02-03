@@ -83,13 +83,13 @@ if (in_array($dirty_op, $valid_op, TRUE)){
 			_CO_CONTACT_MESSAGE_MODIFIED, $ret);
 		break;
 	
-	// confirmation message and email to the addresses specified in the module's preferences
+	// Confirmation message and email to the addresses specified in the module's preferences
 	case "confirmsent":
 		$mailaddress = $mailsubject = $mailbody = $headers = '';
 		$contact_message_handler = icms_getModuleHandler('message', basename(dirname(__FILE__)),
 			'contact');
 		
-		// retrieve the last saved message as an object
+		// Retrieve the last saved message as an object
 		$criteria = new icms_db_criteria_Compo();
 		$criteria->setSort('message_id');
 		$criteria->setOrder('DESC');
@@ -97,7 +97,7 @@ if (in_array($dirty_op, $valid_op, TRUE)){
 		$messageObj = $contact_message_handler->getObjects($criteria);
 		$messageObj = $messageObj[0];
 		
-		// send message as email - maybe should try/catch this?
+		// Send message as email - maybe should try/catch this?
 		$mailaddress = str_replace(' ', '', $module->config['primary_contact']);
 		$mailcreator = $messageObj->getVar('creator');
 		$mailsubject = $messageObj->getVar('title');
@@ -106,17 +106,17 @@ if (in_array($dirty_op, $valid_op, TRUE)){
 		$headers = "From: " . $mailcreator . "<" . $mailcreator . ">\r\nContent-type: text/plain\r\n";
 		mail($mailaddress, $mailsubject, $mailbody, $headers);
 		
-		// display confirmation message
+		// Display confirmation message
 		$icmsTpl->assign('contact_messagesent', TRUE);
 		break;
 		
-	default: // show an empty message form
+	default: // Show an empty message form
   		editmessage();
 		break;
 	}
 }
 
-// check if the module's breadcrumb should be displayed
+// Check if the module's breadcrumb should be displayed
 if ($module->config['show_breadcrumb'] == TRUE) {
 	$icmsTpl->assign('contact_show_breadcrumb', $module->config['show_breadcrumb']);
 } else {

@@ -17,7 +17,7 @@
 
 if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 
-// this needs to be the latest db version
+// This needs to be the latest db version
 define('CONTACT_DB_VERSION', 1);
 
 /**

@@ -34,7 +34,7 @@ class ContactMessage extends icms_ipf_Object {
 		$this->quickInitVar('date', XOBJ_DTYPE_INT, TRUE, false, false, // timestamp
 			$this->handler->setDate());
 		
-		// only allow simple text messages with line breaks - if you want to receive html email
+		// Only allow simple text messages with line breaks - if you want to receive html email
 		// from crazy people on the internet, change 'textarea' to 'dhtmltextarea'
 		$this->setControl('description', 'textarea');
 		
@@ -44,7 +44,7 @@ class ContactMessage extends icms_ipf_Object {
 		$this->initCommonVar('dosmiley', false, 0);
 		$this->initCommonVar('docxode', false, 0);
 		
-		// make date read only, it's for internal use
+		// Make date read only, it's for internal use
 		$this->doHideFieldFromForm('date');
 	}
 
