@@ -23,9 +23,12 @@ define("_MI_CONTACT_PRIMARY_CONTACT", "Primer correo electronic de contacto");
 define("_MI_CONTACT_PRIMARY_CONTACT_DSC", "Los mensajes de este formulario se enviarán al webmaster. Se pueden escribir más de un correo electrónico que hay que separar con una coma ','.");
 define("_MI_CONTACT_MESSAGE_ADD", "Enviar mensaje");
 define("_MI_CONTACT_MESSAGE_ADD_DSC", "Rellene el formulario y déjenos un mensaje.");
-define("_MI_CONTACT_USE_CAPTCHA", ""¿Utilizar CAPTCHA para el formulario");
+define("_MI_CONTACT_USE_CAPTCHA", "¿Utilizar CAPTCHA para el formulario");
 define("_MI_CONTACT_USE_CAPTCHA_DSC", "Este tipo de verificación es necesaria para evitar spam. La manera cómo se realiza la verificación puede modificarse a través de las configuraciones del sistema de ImpressCMS.");
 define("_MI_CONTACT_TEMPLATES", "Plantillas");
 define("_MI_CONTACT_MANUAL", "Instrucciones (PDF)");
 define("_MI_CONTACT_FINAL", "El módulo puede emplearse en páginas web productivas. Uso a propio riesgo.");
-define("_MI_CONTACT_SHOW_BREADCRUMB", ""¿Muestra navegación hilo de Ariadna?");
+define("_MI_CONTACT_SHOW_BREADCRUMB", "¿Muestra navegación hilo de Ariadna?");
+
+// Errors
+define("_CO_CONTACT_INVALID_EMAIL", "Your email address is not valid, please try again.");

@@ -13,6 +13,7 @@
 if (!defined("ICMS_ROOT_PATH")) die("ImpressCMS Basispfad ist nicht definiert");
 
 // Message
+define("_CO_CONTACT_MODULE_NAME", "Kontakt");
 define("_CO_CONTACT_MESSAGE_CREATE", "Kontakt aufnehmen");
 define("_CO_CONTACT_MESSAGE_CREATE_DSC", "Bitte senden Sie in diesem Formular eine Nachricht an den Inhaber dieser Webseite.");
 define("_CO_CONTACT_MESSAGE_CREATOR", "Ihre E-mail Adresse");
@@ -26,3 +27,6 @@ define("_CO_CONTACT_MESSAGE_CREATED", "Die Nachricht wurde erfolgreich erstellt.
 define("_CO_CONTACT_MESSAGE_THANK_YOU", "Vielen Dank!");
 define("_CO_CONTACT_MESSAGE_THANK_YOU_DSC", "Vielen Dank für Ihre Nachricht. Wir haben Ihre Nachricht erhalten und werden uns so schnell wie möglich zurückmelden.");
 define("_CO_CONTACT_MESSAGE_FROM", "Von");
+
+// Errors
+define("_CO_CONTACT_INVALID_EMAIL", "Die Email Adresse scheint nicht korrekt zu sein, bitte prüfen Sie das Feld.");
