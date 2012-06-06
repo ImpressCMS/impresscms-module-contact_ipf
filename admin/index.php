@@ -12,5 +12,5 @@
  * @version		$Id$
  */
 
-header('location: message.php');
+include 'message.php';
 exit;
