@@ -23,3 +23,4 @@ define("_AM_CONTACT_MESSAGES_DSC", "All messages in the module");
 define("_AM_CONTACT_MESSAGE", "Message");
 define("_AM_CONTACT_MESSAGE_CREATED", "The message has been successfully created.");
 define("_AM_CONTACT_MESSAGE_CREATE", "Submit message");
+define("_AM_CONTACT_CATEGORY_CREATE", "Add category");

@@ -17,30 +17,38 @@ $module = icms::handler("icms_module")->getByDirname(basename(dirname(dirname(__
 $adminmenu[] = array(
 	"title" => _MI_CONTACT_MESSAGES,
 	"link" => "admin/message.php");
-	
-	$headermenu[] = array(
-		"title" => _CO_ICMS_GOTOMODULE,
-		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname"));
-		
-	$headermenu[] = array(
-		"title" => _PREFERENCES,
-		"link" => "../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod="
-		. $module->getVar("mid"));
-	
-	$headermenu[] = array(
-		"title" => _MI_CONTACT_TEMPLATES,
-		"link" => "../../system/admin.php?fct=tplsets&op=listtpl&tplset="
-			. $icmsConfig["template_set"] . "&moddir=" . $module->getVar("dirname"));
-	
-	$headermenu[] = array(
-		"title" => _CO_ICMS_UPDATE_MODULE,
-		"link" => ICMS_URL . "/modules/system/admin.php?fct=modulesadmin&op=update&amp;module="
-		. $module->getVar("dirname"));
 
-	$headermenu[] = array(
-		"title" => _MODABOUT_ABOUT,
-		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/admin/about.php");
+// Check if Sprockets installed, if so optionally display a categories tab
+if (icms_get_module_status("sprockets"))
+{
+	$adminmenu[] = array(
+	"title" => _MI_CONTACT_CATEGORIES,
+	"link" => "admin/category.php");
+}
 	
-	$headermenu[] = array(
-		"title" => _MI_CONTACT_MANUAL,
-		"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/manual/contact_manual.pdf");
+$headermenu[] = array(
+	"title" => _CO_ICMS_GOTOMODULE,
+	"link" => ICMS_URL . "/modules/" . $module->getVar("dirname"));
+
+$headermenu[] = array(
+	"title" => _PREFERENCES,
+	"link" => "../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod="
+	. $module->getVar("mid"));
+
+$headermenu[] = array(
+	"title" => _MI_CONTACT_TEMPLATES,
+	"link" => "../../system/admin.php?fct=tplsets&op=listtpl&tplset="
+		. $icmsConfig["template_set"] . "&moddir=" . $module->getVar("dirname"));
+
+$headermenu[] = array(
+	"title" => _CO_ICMS_UPDATE_MODULE,
+	"link" => ICMS_URL . "/modules/system/admin.php?fct=modulesadmin&op=update&amp;module="
+	. $module->getVar("dirname"));
+
+$headermenu[] = array(
+	"title" => _MODABOUT_ABOUT,
+	"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/admin/about.php");
+
+$headermenu[] = array(
+	"title" => _MI_CONTACT_MANUAL,
+	"link" => ICMS_URL . "/modules/" . $module->getVar("dirname") . "/manual/contact_manual.pdf");

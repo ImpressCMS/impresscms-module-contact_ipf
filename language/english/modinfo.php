@@ -19,6 +19,7 @@ global $icmsModule;
 define("_MI_CONTACT_MD_NAME", "Contact");
 define("_MI_CONTACT_MD_DESC", "ImpressCMS Contact module");
 define("_MI_CONTACT_MESSAGES", "Messages");
+define("_MI_CONTACT_CATEGORIES", "Categories");
 define("_MI_CONTACT_PRIMARY_CONTACT", "Primary contact email(s)");
 define("_MI_CONTACT_PRIMARY_CONTACT_DSC", "Messages submitted from the user side will be sent to these addresses. Separate multiple addresses with a comma ',' character");
 define("_MI_CONTACT_MESSAGE_ADD", "Submit message");
