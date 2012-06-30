@@ -201,7 +201,9 @@ if (icms_get_module_status("sprockets"))
 			// Restrict content to CONTACT module CATEGORIES only (no tags)
 			$criteria = icms_buildCriteria(array('mid' => icms::$module->getVar('mid'), 'label_type' => '1'));
 
-			$objectTable = new icms_ipf_view_Table($sprockets_tag_handler, $criteria);
+			$objectTable = new icms_ipf_view_Table($sprockets_tag_handler, $criteria, $actions = array());
+			$objectTable->addCustomAction('edit_category_action');
+			$objectTable->addCustomAction('delete_category_action');
 			$objectTable->addColumn(new icms_ipf_view_Column('title', 'left', FALSE,
 					'category_admin_titles', basename(dirname(dirname(__FILE__)))));
 			$objectTable->addcolumn(new icms_ipf_view_Column('navigation_element', 'left', FALSE,
