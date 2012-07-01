@@ -198,7 +198,7 @@ if (icms_get_module_status("sprockets"))
 				}
 			}
 
-			// Restrict content to CONTACT module CATEGORIES only (no tags)
+			// Restrict content to MODULE-SPECFIC CATEGORIES only (no tags)
 			$criteria = icms_buildCriteria(array('mid' => icms::$module->getVar('mid'), 'label_type' => '1'));
 
 			$objectTable = new icms_ipf_view_Table($sprockets_tag_handler, $criteria, $actions = array());
@@ -214,7 +214,7 @@ if (icms_get_module_status("sprockets"))
 			$objectTable->addFilter('navigation_element', 'navigation_element_filter');
 			$objectTable->addfilter('rss', 'rss_filter');
 			$objectTable->addQuickSearch('title');
-			$objectTable->addIntroButton('addtag', 'category.php?op=mod', _AM_CONTACT_CATEGORY_CREATE);
+			$objectTable->addIntroButton('addtag', 'category.php?op=mod', _AM_SPROCKETS_CATEGORY_MODULE_CREATE);
 
 			$icmsAdminTpl->assign('sprockets_tag_table', $objectTable->fetch());
 			$icmsAdminTpl->display('db:sprockets_admin_tag.html');
