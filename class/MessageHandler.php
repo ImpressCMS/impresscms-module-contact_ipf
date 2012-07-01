@@ -57,7 +57,7 @@ class ContactMessageHandler extends icms_ipf_Handler {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST' && icms_get_module_status("sprockets")) {
 			$sprockets_taglink_handler = icms_getModuleHandler('taglink', 
 					$sprocketsModule->getVar('dirname'), 'sprockets', 'sprockets');
-			$sprockets_taglink_handler->storeTagsForObject($obj, $label_type, $tag_var);
+			$sprockets_taglink_handler->storeTagsForObject($obj, $tag_var, $label_type);
 		}
 	
 		return TRUE;
