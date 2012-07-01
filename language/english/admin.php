@@ -24,3 +24,7 @@ define("_AM_CONTACT_MESSAGE", "Message");
 define("_AM_CONTACT_MESSAGE_CREATED", "The message has been successfully created.");
 define("_AM_CONTACT_MESSAGE_CREATE", "Submit message");
 define("_AM_CONTACT_CATEGORY_CREATE", "Add category");
+
+// Categories
+define("_AM_CONTACT_MESSAGE_ALL_MESSAGES", "All messages");
+define("_AM_CONTACT_MESSAGE_FILTER_BY_CATEGORY", "Filter by category");

@@ -28,5 +28,9 @@ define("_CO_CONTACT_MESSAGE_THANK_YOU", "Thank you");
 define("_CO_CONTACT_MESSAGE_THANK_YOU_DSC", "Your message has been sent to the site administrators and will be attended to shortly.");
 define("_CO_CONTACT_MESSAGE_FROM", "From");
 
+// Category
+define("_CO_CONTACT_MESSAGE_CATEGORY", "Category");
+define("_CO_CONTACT_MESSAGE_CATEGORY_DSC", "Please select a category for your enquiry.");
+
 // Errors
 define("_CO_CONTACT_INVALID_EMAIL", "Your email address is not valid, please try again.");

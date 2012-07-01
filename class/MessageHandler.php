@@ -35,4 +35,53 @@ class ContactMessageHandler extends icms_ipf_Handler {
 			return false;
 		}
 	}
+	
+	/**
+	 * Manages tracking of taglinks (categories), called when a message is inserted or updated
+	 *
+	 * @param object $obj ContactMessage object
+	 * @return bool
+	 */
+	protected function afterSave(& $obj)
+	{		
+		$sprockets_taglink_handler = '';
+		$tag_var = 'category';
+
+		// Only update the taglinks if the object is being updated from the add/edit form (POST).
+		// The taglinks should *not* be updated during a GET request (ie. when the toggle buttons
+		// are used to change the completion status or online status). Attempting to do so will 
+		// trigger an error, as the database should not be updated during a GET request.
+		$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
+		
+		if ($_SERVER['REQUEST_METHOD'] == 'POST' && icms_get_module_status("sprockets")) {
+			$sprockets_taglink_handler = icms_getModuleHandler('taglink', 
+					$sprocketsModule->getVar('dirname'), 'sprockets', 'sprockets');
+			$sprockets_taglink_handler->storeTagsForObject($obj, $tag_var);
+		}
+	
+		return TRUE;
+	}
+	
+	/**
+	 * Deletes notification subscriptions, called when an article is deleted
+	 *
+	 * @param object $obj NewsArticle object
+	 * @return bool
+	 */
+	protected function afterDelete(& $obj) {
+		
+		$sprocketsModule = $notification_handler = $module_handler = $module = $module_id
+				= $category = $item_id = '';
+		
+		$sprocketsModule = icms_getModuleInfo('sprockets');
+
+		// Delete taglinks
+		if (icms_get_module_status("sprockets")) {
+			$sprockets_taglink_handler = icms_getModuleHandler('taglink',
+					$sprocketsModule->getVar('dirname'), 'sprockets');
+			$sprockets_taglink_handler->deleteAllForObject($obj);
+		}
+		
+		return TRUE;
+	}
 }
