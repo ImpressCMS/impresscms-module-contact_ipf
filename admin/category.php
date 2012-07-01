@@ -96,6 +96,7 @@ function edittag($tag_id = 0)
 	$tagObj->hideFieldFromForm('label_type');
 	$tagObj->hideFieldFromForm('mid');
 	$tagObj->hideFieldFromForm('navigation_element');
+	$tagObj->hideFieldFromForm('rss');
 		
 	if (!$tagObj->isNew()){
 				
@@ -105,6 +106,7 @@ function edittag($tag_id = 0)
 
 	} else {
 		$sprocketsModule->displayAdminMenu(1, _AM_SPROCKETS_TAGS . " > " . _CO_ICMS_CREATINGNEW);
+		$tagObj->setVar('rss', '0');
 		$sform = $tagObj->getForm(_AM_SPROCKETS_TAG_CREATE, 'addtag');
 		$sform->assign($icmsAdminTpl);
 
@@ -208,8 +210,6 @@ if (icms_get_module_status("sprockets"))
 			$objectTable->addCustomAction('delete_category_action');
 			$objectTable->addColumn(new icms_ipf_view_Column('title', 'left', FALSE,
 					'category_admin_titles', basename(dirname(dirname(__FILE__)))));
-			$objectTable->addcolumn(new icms_ipf_view_Column('navigation_element', 'left', FALSE,
-					'category_admin_navigation_element', basename(dirname(dirname(__FILE__)))));
 			$objectTable->addcolumn(new icms_ipf_view_Column('rss', 'left', FALSE, 
 					'category_admin_rss', basename(dirname(dirname(__FILE__))),
 					_AM_SPROCKETS_TAG_RSS_FEED));
