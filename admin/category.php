@@ -28,7 +28,7 @@ function edittag($tag_id = 0)
 		array('parent_id'))) {
 		
 		// Disallow setting own ID as parent
-		if ($_POST['parent_id'] == $tagObj->id()) {
+		if ($_POST['parent_id'] == $tagObj->getVar('tag_id')) {
 			$_POST['parent_id'] = $tagObj->getVar('parent_id');
 		}
 		
