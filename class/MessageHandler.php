@@ -45,6 +45,7 @@ class ContactMessageHandler extends icms_ipf_Handler {
 	protected function afterSave(& $obj)
 	{		
 		$sprockets_taglink_handler = '';
+		$label_type = '1';
 		$tag_var = 'category';
 
 		// Only update the taglinks if the object is being updated from the add/edit form (POST).
@@ -56,7 +57,7 @@ class ContactMessageHandler extends icms_ipf_Handler {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST' && icms_get_module_status("sprockets")) {
 			$sprockets_taglink_handler = icms_getModuleHandler('taglink', 
 					$sprocketsModule->getVar('dirname'), 'sprockets', 'sprockets');
-			$sprockets_taglink_handler->storeTagsForObject($obj, $tag_var);
+			$sprockets_taglink_handler->storeTagsForObject($obj, $label_type, $tag_var);
 		}
 	
 		return TRUE;
