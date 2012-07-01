@@ -104,8 +104,8 @@ if (in_array($clean_op,$valid_op,TRUE)) {
 			$sprockets_taglink_handler = icms_getModuleHandler('taglink',
 					$sprocketsModule->getVar('dirname'), 'sprockets');
 			
-			$category_select_box = $sprockets_tag_handler->getTagSelectBox('message.php', $clean_category_id,
-				_AM_CONTACT_MESSAGE_ALL_MESSAGES, FALSE, icms::$module->getVar('mid'));
+			$category_select_box = $sprockets_tag_handler->getCategorySelectBox('message.php', 
+					$clean_category_id,	_AM_CONTACT_MESSAGE_ALL_MESSAGES, icms::$module->getVar('mid'));
 			if (!empty($category_select_box)) {
 				echo '<h3>' . _AM_CONTACT_MESSAGE_FILTER_BY_CATEGORY . '</h3>';
 				echo $category_select_box;

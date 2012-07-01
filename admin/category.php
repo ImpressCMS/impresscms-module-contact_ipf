@@ -82,9 +82,11 @@ function edittag($tag_id = 0)
 	////////// SET MODULE ID AND LABEL TYPE //////////
 	//////////////////////////////////////////////////
 	
-	// This enables a module-specific category tree to be created
+	// This enables a module-specific category tree to be created. Categories must always be 
+	// navigation elements because excluding nodes messes up the tree.
 	$tagObj->setVar('mid', icms::$module->getVar('mid'));
 	$tagObj->setVar('label_type', '1');
+	$tagObj->setVar('navigation_element', '1');
 	
 	//////////////////////////////////////////////////
 	//////////////////////////////////////////////////
@@ -93,7 +95,7 @@ function edittag($tag_id = 0)
 	// Show/hide fields that user should/should not modify
 	$tagObj->hideFieldFromForm('label_type');
 	$tagObj->hideFieldFromForm('mid');
-	$tagObj->showFieldOnForm('navigation_element');
+	$tagObj->hideFieldFromForm('navigation_element');
 		
 	if (!$tagObj->isNew()){
 				
