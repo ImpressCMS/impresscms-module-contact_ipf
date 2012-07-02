@@ -100,12 +100,12 @@ function edittag($tag_id = 0)
 		
 	if (!$tagObj->isNew()){
 				
-		$sprocketsModule->displayAdminMenu(1, _AM_SPROCKETS_TAGS . " > " . _CO_ICMS_EDITING);
+		icms::$module->displayAdminMenu(1, _AM_SPROCKETS_TAGS . " > " . _CO_ICMS_EDITING);
 		$sform = $tagObj->getForm(_AM_SPROCKETS_TAG_EDIT, 'addtag');
 		$sform->assign($icmsAdminTpl);
 
 	} else {
-		$sprocketsModule->displayAdminMenu(1, _AM_SPROCKETS_TAGS . " > " . _CO_ICMS_CREATINGNEW);
+		icms::$module->displayAdminMenu(1, _AM_SPROCKETS_TAGS . " > " . _CO_ICMS_CREATINGNEW);
 		$tagObj->setVar('rss', '0');
 		$sform = $tagObj->getForm(_AM_SPROCKETS_TAG_CREATE, 'addtag');
 		$sform->assign($icmsAdminTpl);
