@@ -123,7 +123,7 @@ if (icms_get_module_status("sprockets"))
 	$clean_op = '';
 
 	/** Create a whitelist of valid values */
-	$valid_op = array ('mod','changedField','addtag', 'toggleStatus', 'toggleNavigationElement', 'del', '');
+	$valid_op = array ('mod','changedField','addtag', 'toggleStatus', 'del', '');
 
 	if (isset($_GET['op'])) $clean_op = htmlentities($_GET['op']);
 	if (isset($_POST['op'])) $clean_op = htmlentities($_POST['op']);
@@ -161,18 +161,6 @@ if (icms_get_module_status("sprockets"))
 				} else {
 					redirect_header(ICMS_URL . $ret, 2, _AM_SPROCKETS_TAG_RSS_ENABLED);
 				}
-
-			break;
-
-		case "toggleNavigationElement":
-			$status = $ret = '';
-			$status = $sprockets_tag_handler->toggleStatus($clean_tag_id, 'navigation_element');
-			$ret = '/modules/' . basename(dirname(dirname(__FILE__))) . '/admin/category.php';
-			if ($status == 0) {
-				redirect_header(ICMS_URL . $ret, 2, _AM_SPROCKETS_TAG_NAVIGATION_DISABLED);
-			} else {
-				redirect_header(ICMS_URL . $ret, 2, _AM_SPROCKETS_TAG_NAVIGATION_ENABLED);
-			}
 
 			break;
 
