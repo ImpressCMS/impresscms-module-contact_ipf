@@ -189,19 +189,21 @@ if (icms_get_module_status("sprockets"))
 					$tagObj->displaySingleObject();
 				}
 			}
+			
+			$sprocketsModule = icms::handler("icms_module")->getByDirname("sprockets");
+			
+			// Include the Angry Tree Table !!! (Don't ask).
+			include_once ICMS_ROOT_PATH . '/modules/' . $sprocketsModule->getVar('dirname')
+					. '/include/angry_tree_table.php';
 
 			// Restrict content to MODULE-SPECFIC CATEGORIES only (no tags)
 			$criteria = icms_buildCriteria(array('mid' => icms::$module->getVar('mid'), 'label_type' => '1'));
 
-			$objectTable = new icms_ipf_view_Table($sprockets_tag_handler, $criteria, $actions = array());
+			$objectTable = new icms_ipf_view_Tree($sprockets_tag_handler, $criteria, $actions = array());
 			$objectTable->addCustomAction('edit_category_action');
 			$objectTable->addCustomAction('delete_category_action');
 			$objectTable->addColumn(new icms_ipf_view_Column('title', 'left', FALSE,
 					'category_admin_titles', basename(dirname(dirname(__FILE__)))));
-			$objectTable->addcolumn(new icms_ipf_view_Column('rss', 'left', FALSE, 
-					'category_admin_rss', basename(dirname(dirname(__FILE__))),
-					_AM_SPROCKETS_TAG_RSS_FEED));
-			$objectTable->addfilter('rss', 'rss_filter');
 			$objectTable->addQuickSearch('title');
 			$objectTable->addIntroButton('addtag', 'category.php?op=mod', _AM_SPROCKETS_CATEGORY_MODULE_CREATE);
 
