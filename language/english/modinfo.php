@@ -30,3 +30,7 @@ define("_MI_CONTACT_TEMPLATES", "Templates");
 define("_MI_CONTACT_MANUAL", "Manual (PDF)");
 define("_MI_CONTACT_FINAL", "Production release. Use this module at your own risk.");
 define("_MI_CONTACT_SHOW_BREADCRUMB", "Display breadcrumb?");
+
+// New language constants in version 1.04
+define("_MI_CONTACT_SHOW_CATEGORIES", "Show categories?");
+define("_MI_CONTACT_SHOW_CATEGORIES_DSC", "Turn categories on/off on both user and admin side (only if Sprockets module installed).");

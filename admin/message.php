@@ -95,7 +95,7 @@ if (in_array($clean_op,$valid_op,TRUE)) {
 		$contactModule = icms_getModuleInfo(basename(dirname(dirname(__FILE__))));
 		$sprocketsModule = icms_getModuleInfo('sprockets');
 		
-		if (icms_get_module_status("sprockets")) {
+		if (icms_get_module_status("sprockets") && icms::$module->config['show_categories'] == 1) {
 			
 			$category_select_box = '';
 			$taglink_array = $categorised_message_list = array();
@@ -106,7 +106,7 @@ if (in_array($clean_op,$valid_op,TRUE)) {
 			
 			$category_select_box = $sprockets_tag_handler->getCategorySelectBox('message.php', 
 					$clean_category_id,	_AM_CONTACT_MESSAGE_ALL_MESSAGES, icms::$module->getVar('mid'));
-			if (!empty($category_select_box)) {
+			if ($category_select_box) {
 				echo '<h3>' . _AM_CONTACT_MESSAGE_FILTER_BY_CATEGORY . '</h3>';
 				echo $category_select_box;
 			}

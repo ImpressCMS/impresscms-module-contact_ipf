@@ -119,5 +119,13 @@ $modversion['config'][] = array(
 	'valuetype' => 'int',
 	'default' => '1');
 
+$modversion['config'][] = array(
+	'name' => 'show_categories',
+	'title' => '_MI_CONTACT_SHOW_CATEGORIES',
+	'description' => '_MI_CONTACT_SHOW_CATEGORIES_DSC',
+	'formtype' => 'yesno',
+	'valuetype' => 'int',
+	'default' => '1');
+
 /** Comments information */
 $modversion['hasComments'] = 0;

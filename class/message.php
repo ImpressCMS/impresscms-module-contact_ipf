@@ -24,20 +24,23 @@ class ContactMessage extends icms_ipf_Object {
 	 */
 	public function __construct(& $handler) {
 		global $icmsConfig;
+		$sprocketsModule = icms_getModuleInfo('sprockets');
 
 		icms_ipf_object::__construct($handler);
 
 		$this->quickInitVar('message_id', XOBJ_DTYPE_INT, TRUE);
 		$this->quickInitVar('creator', XOBJ_DTYPE_TXTBOX, TRUE); // email address
 		$this->quickInitVar('title', XOBJ_DTYPE_TXTBOX, TRUE); // email subject
-		$this->initNonPersistableVar('category', XOBJ_DTYPE_INT, 'category', FALSE, FALSE, FALSE, TRUE); // Category
+		if (icms_get_module_status("sprockets") && icms::$module->config['show_categories'] == '1') {
+			$this->initNonPersistableVar('category', XOBJ_DTYPE_INT, 'category', FALSE, FALSE, FALSE, TRUE); // Category
+		}
 		$this->quickInitVar('description', XOBJ_DTYPE_TXTAREA, TRUE); // email body
 		$this->quickInitVar('date', XOBJ_DTYPE_INT, TRUE, false, false, // timestamp
 		$this->handler->setDate());
 		
-		// Only display the tag (category) field if the sprockets module is installed
-		$sprocketsModule = icms_getModuleInfo('sprockets');
-		if (icms_get_module_status("sprockets"))
+		// Only display the tag (category) field if the sprockets module is installed & preferences allow it
+		
+		if (icms_get_module_status("sprockets") && icms::$module->config['show_categories'] == '1')
 		{
 			$this->setControl('category', array(
 			'name' => 'select',
