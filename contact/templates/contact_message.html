@@ -1,0 +1,12 @@
+<{includeq file='db:contact_header.html'}>
+
+<{if $contact_messageform}>
+	<{includeq file='db:system_common_form.html' form=$contact_messageform}>
+<{/if}>
+
+<{if $contact_messagesent}>
+	<h3><{$smarty.const._CO_CONTACT_MESSAGE_THANK_YOU}></h3>
+	<p><{$smarty.const._CO_CONTACT_MESSAGE_THANK_YOU_DSC}></p>
+<{/if}>
+
+<{includeq file='db:contact_footer.html'}>
