@@ -21,7 +21,7 @@ define("_CO_CONTACT_MESSAGE_TITLE", "お名前・会社名（全角）");
 define("_CO_CONTACT_MESSAGE_DESCRIPTION", "お問い合わせ内容");
 define("_CO_CONTACT_MESSAGE_DESCRIPTION_DSC", "情報ImpressCMSをご利用された感想等がありましたらご記入下さい");
 define("_CO_CONTACT_MESSAGE_DATE", "日付");
-define("_CO_CONTACT_DATE_DESCRIPTION", "The time/date the message was submitted, zulu (server) time");
+define("_CO_CONTACT_DATE_DESCRIPTION", "時刻/日付のメッセージが提出された、ズールー族の時間(UTC)");
 define("_CO_CONTACT_MESSAGE_MODIFIED", "メッセージは正常に変更されました。");
 define("_CO_CONTACT_MESSAGE_CREATED", "メッセージが正常に作成されました。");
 define("_CO_CONTACT_MESSAGE_THANK_YOU", "ご利用ありがとうございました。");
