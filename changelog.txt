@@ -22,3 +22,8 @@ Version 1.04
 ============
 
 - Add support for categories, using Sprockets module as backend.
+
+Version 1.05
+============
+
+- Add language constant for the email submit button, to facilitate customisation.

@@ -34,3 +34,6 @@ define("_CO_CONTACT_MESSAGE_CATEGORY_DSC", "Please select a category for your en
 
 // Errors
 define("_CO_CONTACT_INVALID_EMAIL", "Your email address is not valid, please try again.");
+
+// New in V1.05
+define("_CO_CONTACT_SUBMIT_MAIL", "Submit email");

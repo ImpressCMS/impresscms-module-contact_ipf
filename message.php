@@ -23,7 +23,8 @@ function editmessage($clean_message_id = 0) {
 	$messageObj = $contact_message_handler->get($clean_message_id);
 
 	if ($messageObj->isNew()) {
-		$sform = $messageObj->getSecureForm(_CO_CONTACT_MESSAGE_CREATE, 'addmessage');
+		$sform = $messageObj->getSecureForm(_CO_CONTACT_MESSAGE_CREATE, 'addmessage', FALSE, 
+				_CO_CONTACT_SUBMIT_MAIL);
 		
 		// add captcha, if required
 		if ($module->config['use_captcha'] == TRUE) {
