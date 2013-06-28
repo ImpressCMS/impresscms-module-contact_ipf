@@ -29,3 +29,7 @@ define("_MI_CONTACT_TEMPLATES", "Templates");
 define("_MI_CONTACT_MANUAL", "Anleitung (PDF)");
 define("_MI_CONTACT_FINAL", "Kann in produktiven Webseite eingesetzt werden. Benutzung auf eigene Gefahr.");
 define("_MI_CONTACT_SHOW_BREADCRUMB", "Zeige Breadcrumb Navigation?");
+
+// New language constants in version 1.04
+define("_MI_CONTACT_SHOW_CATEGORIES", "Zeige Kategorien an?");
+define("_MI_CONTACT_SHOW_CATEGORIES_DSC", "Ein- und Ausschalten von Kategorien in der Adminseite und Userseite (funktioniert nur, wenn das Sprockets Module installiert ist).");

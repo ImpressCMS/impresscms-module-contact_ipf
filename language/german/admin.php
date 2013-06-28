@@ -23,3 +23,7 @@ define("_AM_CONTACT_MESSAGES_DSC", "Alle Nachrichten in diesem Modul");
 define("_AM_CONTACT_MESSAGE", "Nachricht");
 define("_AM_CONTACT_MESSAGE_CREATED", "Die Nachricht wurde erstellt.");
 define("_AM_CONTACT_MESSAGE_CREATE", "Nachricht senden");
+
+// Categories
+define("_AM_CONTACT_MESSAGE_ALL_MESSAGES", "Alle Nachrichten");
+define("_AM_CONTACT_MESSAGE_FILTER_BY_CATEGORY", "Filtern nach Kategorie");

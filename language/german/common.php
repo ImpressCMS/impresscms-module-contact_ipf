@@ -28,5 +28,12 @@ define("_CO_CONTACT_MESSAGE_THANK_YOU", "Vielen Dank!");
 define("_CO_CONTACT_MESSAGE_THANK_YOU_DSC", "Vielen Dank für Ihre Nachricht. Wir haben Ihre Nachricht erhalten und werden uns so schnell wie möglich zurückmelden.");
 define("_CO_CONTACT_MESSAGE_FROM", "Von");
 
+// Category
+define("_CO_CONTACT_MESSAGE_CATEGORY", "Kategorie");
+define("_CO_CONTACT_MESSAGE_CATEGORY_DSC", "Bitte eine Ketagoie auswählen.");
+
 // Errors
 define("_CO_CONTACT_INVALID_EMAIL", "Die Email Adresse scheint nicht korrekt zu sein, bitte prüfen Sie das Feld.");
+
+// New in V1.05
+define("_CO_CONTACT_SUBMIT_MAIL", "Senden");
