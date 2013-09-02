@@ -17,7 +17,7 @@ if (!defined("ICMS_ROOT_PATH")) die("ICMS root path not defined");
 /**  General Information  */
 $modversion = array(
   'name'=> _MI_CONTACT_MD_NAME,
-  'version'=> 1.04,
+  'version'=> 1.05,
   'description'=> _MI_CONTACT_MD_DESC,
   'author'=> "Madfish (Simon Wilkinson)",
   'credits'=> "Skeleton code generated with ImBuilding.",
@@ -32,9 +32,9 @@ $modversion = array(
   'image'=> "images/icon_big.png", /* for backward compatibility */
 
 /**  Development information */
-  'status_version'=> "1.04",
-  'status'=> "Final",
-  'date'=> "16/1/2013",
+  'status_version'=> "1.05",
+  'status'=> "Beta",
+  'date'=> "2/9/2013",
   'author_word'=> "",
 
 /** Contributors */

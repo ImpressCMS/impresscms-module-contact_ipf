@@ -102,7 +102,7 @@ if (in_array($dirty_op, $valid_op, TRUE)){
 		$mailaddress = str_replace(' ', '', $module->config['primary_contact']);
 		$mailcreator = $messageObj->getVar('creator');
 		$mailsubject = $messageObj->getVar('title');
-		$mailbody = $messageObj->getVar('description');
+		$mailbody = $messageObj->getVar('description', 'e');
 		$mailbody = trim($mailbody);
 		$headers = "From: " . $mailcreator . "<" . $mailcreator . ">\r\nContent-type: text/plain\r\n";
 		mail($mailaddress, $mailsubject, $mailbody, $headers);

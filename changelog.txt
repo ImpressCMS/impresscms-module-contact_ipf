@@ -27,3 +27,4 @@ Version 1.05
 ============
 
 - Add language constant for the email submit button, to facilitate customisation.
+- Ensure that HTML Purifier comments are not appended in the email.
